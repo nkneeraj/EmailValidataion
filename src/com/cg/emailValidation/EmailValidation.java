@@ -9,15 +9,16 @@ public class EmailValidation {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Email validator");
 		Scanner sc = new Scanner(System.in);
-		Pattern pincode = Pattern.compile("^abc");
+		Pattern pincode = Pattern.compile("^abc{1,}[a-zA-Z0-9!@#$&()\\\\-`.+,/\\\"]*@bridgelab.co");
 		System.out.println("Enter the email");
 		String pattern = sc.nextLine();
 		Matcher matcher = pincode.matcher(pattern);
+		
 		boolean isFound = matcher.find();
 		if(isFound)
 			System.out.println("Valid Email");
 		else
-			System.out.println("Not a valid Email");
+			System.out.println("Email not found");
 		sc.close();
 	}
 }
